@@ -3,6 +3,22 @@
 
 ## 项目核心功能
 
+### multi-agent
+
+- 基于LangGraph构建Supervisor架构的Multi-Agent系统
+
+- Sub-Agent : NL2SQL模块、NL2Python模块、联网查询模块、邮件管理助手
+
+- 构建长短期记忆管理模块，实现对话消息的动态裁剪、总结摘要
+
+- 实现Human-in-the-Loop功能，在AI工作流的关键节点引入人工干预
+
+                  multi-agent的核心架构如图所示
+   ![alt text](multi-agent-frame.png)
+
+   
+### sub-agent
+
 - 联网查询功能：接入Google search API, 通过selenium获取网络知识
 
 - GitHub查询功能：接入GitHub API, 让Agent能够查询各种开源项目
@@ -10,6 +26,11 @@
 - NL2Python 模块：将自然语言描述转化为Python代码
 
 - NL2SQL 模块：将自然语言描述转化为SQL代码，实现本地数据库查询
+
+- 邮件管理助手
+
+                  Supervisor架构的sub-agent如图所示
+   ![alt text](sub-agent-frame.png)
 
 
 ## 项目背景
