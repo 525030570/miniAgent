@@ -7,7 +7,7 @@
 
 - 基于LangGraph构建Supervisor架构的Multi-Agent系统
 
-- Sub-Agent : NL2SQL模块、NL2Python模块、联网查询模块、邮件管理助手
+- Sub-Agent : Rag模块、NL2SQL模块、NL2Python模块、联网查询模块、邮件管理助手
 
 - 构建长短期记忆管理模块，实现对话消息的动态裁剪、总结摘要
 
@@ -26,6 +26,8 @@
 - NL2Python 模块：将自然语言描述转化为Python代码
 
 - NL2SQL 模块：将自然语言描述转化为SQL代码，实现本地数据库查询
+
+- RAG 模块：查询本地向量知识库，为Agent提供私有知识
 
 - 邮件管理助手
 
