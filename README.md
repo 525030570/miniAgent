@@ -44,25 +44,57 @@
 ```
 miniAgent
 ├─ .env
-├─ examples.ipynb                # 示例演示
-├─ README.md
+├─ .langgraph_api
+├─ examples.ipynb
+├─ graph.py
+├─ langgraph.json
+├─ multi-agent-frame.png
 ├─ requirements.txt
-└─ src
-   ├─ main.py
-   ├─ modules                    # 功能模块
-   │  ├─ extract_data.py
-   │  ├─ fig_inter.py
-   │  ├─ get_answer.py
-   │  ├─ get_answer_github.py
-   │  ├─ miniAgentClass.py
-   │  ├─ python_inter.py
-   │  └─ sql_inter.py
-   └─ utils                       # 调用的工具
-      ├─ chat.py
-      ├─ common.py
-      ├─ database_search.py
-      ├─ tools.py
-      └─ web_search.py
+├─ src
+│  ├─ data_agent
+│  ├─ email_agent
+│  ├─ HITL
+│  ├─ LLMS
+│  ├─ main.py
+│  ├─ Memory
+│  ├─ modules
+│  ├─ rag_agent
+│  ├─ supervisor_agent
+│  ├─ utils
+│  ├─ verify_info
+│  └─ __init__.py
+└─ README.md
+```
+
+## 项目启动
+
+1. 创建虚拟环境
+```bash
+# 创建虚拟环境
+conda create -n miniAgent python=3.11
+# 创建虚拟环境
+conda activate miniAgent
+# 安装项目依赖
+pip install -r requirements.txt
+```
+
+2. 在.env文件中配置环境变量
+
+3. 安装`langgraph-cli`以及其他依赖
+```bash
+pip install -U "langgraph-cli[inmem]" -i https://pypi.tuna.tsinghua.edu.cn/simple
+```
+
+4. 创建`langgraph.json`文件
+
+在项目文件夹中，新建一个`langgraph.json`文件，在该`json`文件中配置项目信息，遵循规范如下所示：
+- 必须包含 `dependencies` 和 `graphs` 字段
+- `graphs` 字段格式："图名": "文件路径:变量名"
+- 配置文件必须放在与Python文件同级或更高级的目录
+
+5. 项目启动
+```bash
+langgraph dev
 ```
 
 ## 项目效果
@@ -76,5 +108,6 @@ miniAgent
 ## 项目改进
 
 未来准备将Agent助手与 Electrical RAG 项目进行整合，打造一个轻量化的便于一线产业工程师使用的AI大模型智能助手。
+
 
 
